@@ -1,6 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 // @ts-ignore
 import testVertexShader from './shader/verticxShader.glsl'
 // @ts-ignore
@@ -9,7 +9,7 @@ import testFragmentShader from './shader/fragment.glsl'
 export function initShader() {
 
   const scene = new THREE.Scene()
-  const dat = require('dat.gui')
+  // const dat = require('dat.gui')
 
 
   const ambentLight = new THREE.AmbientLight(0xffffff, 0.2)
@@ -86,24 +86,24 @@ export function initShader() {
   )
 
 
-  const guiElements = document.getElementsByClassName('dg ac')
-  if(guiElements.length === 0){
-    const gui = new dat.GUI();
-    gui.add(material.uniforms.waveProps, 'value').min(0.0).max(1.0).step(0.01).name('wave')
-    gui.add(material.uniforms.frequencyProps.value, 'x').min(1.0).max(10.0).step(0.01).name('frequencyX')
-    gui.add(material.uniforms.frequencyProps.value, 'y').min(1.0).max(10.0).step(0.01).name('frequencyY')
-    gui.add(material.uniforms.waveSpeed, 'value').min(0.0).max(10.0).step(0.01).name('waveSpeed')
-    gui.addColor(debugColor, 'deepColor').name('deepColor').onChange(() => {
-        material.uniforms.deepColor.value = new THREE.Color(debugColor.deepColor)
-    })
+  // const guiElements = document.getElementsByClassName('dg ac')
+  // if(guiElements.length === 0){
+  //   const gui = new dat.GUI();
+  //   gui.add(material.uniforms.waveProps, 'value').min(0.0).max(1.0).step(0.01).name('wave')
+  //   gui.add(material.uniforms.frequencyProps.value, 'x').min(1.0).max(10.0).step(0.01).name('frequencyX')
+  //   gui.add(material.uniforms.frequencyProps.value, 'y').min(1.0).max(10.0).step(0.01).name('frequencyY')
+  //   gui.add(material.uniforms.waveSpeed, 'value').min(0.0).max(10.0).step(0.01).name('waveSpeed')
+  //   gui.addColor(debugColor, 'deepColor').name('deepColor').onChange(() => {
+  //       material.uniforms.deepColor.value = new THREE.Color(debugColor.deepColor)
+  //   })
 
-    gui.addColor(debugColor, 'surfaceColor').name('surfaceColor').onChange(() => {
-        material.uniforms.surfaceColor.value = new THREE.Color(debugColor.surfaceColor)
-    })
+  //   gui.addColor(debugColor, 'surfaceColor').name('surfaceColor').onChange(() => {
+  //       material.uniforms.surfaceColor.value = new THREE.Color(debugColor.surfaceColor)
+  //   })
 
-    gui.add(material.uniforms.colorOffset, 'value').min(0.0).max(10.0).step(0.01).name('colorOffset')
-    gui.add(material.uniforms.colorMultiple, 'value').min(1.0).max(10.0).step(0.01).name('colorMultiple')
-  }
+  //   gui.add(material.uniforms.colorOffset, 'value').min(0.0).max(10.0).step(0.01).name('colorOffset')
+  //   gui.add(material.uniforms.colorMultiple, 'value').min(1.0).max(10.0).step(0.01).name('colorMultiple')
+  // }
 
 
   const planeGeometry = new THREE.PlaneGeometry(4, 4, 512, 512)
