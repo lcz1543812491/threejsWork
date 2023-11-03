@@ -7,6 +7,7 @@ export default function Page() {
         <Link href="/ragingSea">Raging Sea</Link>
         <Link href="/portal">Portal</Link>
         <Link href="/flyLight">FlyLight Fireworks</Link>
+        <Link href="/smartCity">Smart City</Link>
       </main>
     </main>
   )
