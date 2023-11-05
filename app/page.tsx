@@ -1,14 +1,29 @@
+'use client'
+
 import Link from 'next/link'
+//import { initHomePage } from '@/app/ui/home/home'
+import { createWater } from '@/app/ui/home/home2/home2'
+import { useEffect } from 'react'
 
 export default function Page() {
+
+  useEffect(() => {
+    createWater()
+  }, [])
+
   return (
-    <main className="flex min-h-screen flex-col  text-white bg-black w-full h-full">
-      <main className="flex min-h-screen flex-col items-center p-24 bg-black gap-8">
-        <Link href="/ragingSea">Raging Sea</Link>
-        <Link href="/portal">Portal</Link>
-        <Link href="/flyLight">FlyLight Fireworks</Link>
-        <Link href="/smartCity">Smart City</Link>
+    <>
+      <main className="fixed bottom-32 left-10 flex w-4/5 flex-col  text-white bg-transparent">
+        <main className='font-black	text-6xl'>Three JS</main>
+        <main className='font-black	text-9xl'>Individual works</main>
+        <main className="flex  flex-row items-center bg-black p-4 gap-8 flex-wrap	">
+          <Link href="/ragingSea">Raging Sea</Link>
+          <Link href="/portal">Portal</Link>
+          <Link href="/flyLight">FlyLight Fireworks</Link>
+          <Link href="/smartCity">Smart City</Link>
+        </main>
       </main>
-    </main>
+      <canvas id="galaxy" style={{ width: '100vw', height: '100vh', background: 'black' }}></canvas>
+    </>
   )
 }
